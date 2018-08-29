@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{title}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+<ion-item-sliding #slidingItem *ngFor="let task of tasks" [ngClass]="task.priority">
+        <ion-item>
+          <h2>{{task.name}}</h2>
+          <p>{{task.detail}}</p>
+        </ion-item>
+        <ion-item-options side="right">
+          <button (click)="editar(task,slidingItem)" ion-button color="secondary" large>
+            <ion-icon name="create"></ion-icon>
+          </button>
+          <button (click)="delete(task,slidingItem)" ion-button color="danger" large>
+            <ion-icon name="trash"></ion-icon>
+          </button>
+        </ion-item-options>
+    </ion-item-sliding>
+    <ion-item></ion-item>
+  </ion-list>
+  <ion-fab right bottom>
+      <button ion-fab (click)="goToTask()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+  </ion-fab>
+</ion-content>

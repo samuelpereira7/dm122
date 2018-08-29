@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Images</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row justify-content-center>
+          <ion-col col-12 col-sm-6 col-md-2 *ngFor="let image of images">
+            <img [src]="image">
+          </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

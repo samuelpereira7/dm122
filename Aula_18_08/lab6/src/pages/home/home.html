@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{title}} </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <button ion-button (click)="takePicture()">Tire uma foto!</button>
+  <button ion-button *ngIf="captureDataUrl" (click)="openActionSheet()">Ações</button>
+  <div *ngIf="captureDataUrl" style="display:flex; flex-direction:column;justify-content:center">
+    <img [src]="captureDataUrl" /> </div>
+</ion-content>
