@@ -31,7 +31,7 @@ export class PhotoService{
           (data) => {
             if (data != null) {
               data.push(imagePath);
-              return this.localStorage.set(KEY_LOCALSTORAGE,data);//retorna um Promisse
+              return this.localStorage.set(KEY_LOCALSTORAGE,data);//retorna um Promise
             } else {
               let images = [imagePath];
               return this.localStorage.set(KEY_LOCALSTORAGE, images);
