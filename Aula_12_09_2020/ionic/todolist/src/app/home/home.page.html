@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      {{title}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item-sliding #slidingItem *ngFor="let task of tasks" [ngClass]="getClass(task)">
+      <ion-item>
+          <ion-text>
+            <h2>{{task.name}}</h2>
+            <p>{{task.detail}}</p>
+          </ion-text>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-buttons slot="secondary">
+          <ion-button (click)="editar(task, slidingItem)">
+            <ion-icon slot="icon-only" name="create" color="secondary"></ion-icon>
+          </ion-button>
+          <ion-button (click)="delete(task, slidingItem)">
+            <ion-icon slot="icon-only" name="trash" color="danger"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add" (click)="goToTaskPage()"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>DM122</ion-title>
+  </ion-toolbar>
+</ion-footer>
